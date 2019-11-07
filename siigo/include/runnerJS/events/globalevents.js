@@ -1,0 +1,2 @@
+
+Runner.pages.PageSettings.addPageEvent('.global',Runner.pages.constants.PAGE_LOGIN,"afterInit",function(pageObj,proxy,pageid){$("[id^=sucursal]").attr("data-type","no_obg");;});Runner.pages.PageSettings.addPageEvent('.global',Runner.pages.constants.PAGE_MENU,"afterInit",function(pageObj,proxy,pageid){});

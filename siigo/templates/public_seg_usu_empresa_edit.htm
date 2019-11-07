@@ -1,0 +1,299 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}
+		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}
+		<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-edit" {$bodyattrs}>
+	{BEGIN body}
+		{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_editpage}
+<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}
+<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
+
+{BEGIN editheader}
+	<h2 {$editheader_hiddenattr} data-pageid="{$pageid}" data-brick="editheader" >{$pagetitlelabel public_seg_usu_empresa edit}</h2>
+	{BEGIN printtabheader}<h4>{$printtabheader_text}</h4>{END printtabheader}
+
+{END editheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}
+<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
+
+{BEGIN message_block}
+<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}
+		<button class="btn btn-sm btn-default" {$backbutton_attrs}>Volver a la lista</button>
+{END back_button}
+{BEGIN view_page_button}
+	<button class="btn btn-sm btn-default" {$view_page_button_attrs}>Ver</button>
+{END view_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
+
+
+
+
+
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}
+<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$editfields_hiddenattr} data-pageid="{$pageid}" data-brick="editfields" class="form-horizontal" role="form">
+
+
+
+			{BEGIN id_perfil_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_id_perfil}" data-fieldname="id_perfil" data-signal-error-for="id_perfil{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_id_perfil}">
+		{BEGIN id_perfil_label}{$label public_seg_usu_empresa id_perfil}{END id_perfil_label}
+	</label>
+	<div class="col-md-6" >
+		{$id_perfil_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="id_perfil">
+		<div class="text-muted" >
+		{$tooltip public_seg_usu_empresa id_perfil}
+		</div>
+	</div>
+</div>
+</div>
+{END id_perfil_fieldblock}
+
+			{BEGIN usu_identificacion_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_usu_identificacion}" data-fieldname="usu_identificacion" data-signal-error-for="usu_identificacion{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_usu_identificacion}">
+		{BEGIN usu_identificacion_label}{$label public_seg_usu_empresa usu_identificacion}{END usu_identificacion_label}
+	</label>
+	<div class="col-md-6" >
+		{$usu_identificacion_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="usu_identificacion">
+		<div class="text-muted" >
+		{$tooltip public_seg_usu_empresa usu_identificacion}
+		</div>
+	</div>
+</div>
+</div>
+{END usu_identificacion_fieldblock}
+
+			{BEGIN usu_nombres_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_usu_nombres}" data-fieldname="usu_nombres" data-signal-error-for="usu_nombres{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_usu_nombres}">
+		{BEGIN usu_nombres_label}{$label public_seg_usu_empresa usu_nombres}{END usu_nombres_label}
+	</label>
+	<div class="col-md-6" >
+		{$usu_nombres_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="usu_nombres">
+		<div class="text-muted" >
+		{$tooltip public_seg_usu_empresa usu_nombres}
+		</div>
+	</div>
+</div>
+</div>
+{END usu_nombres_fieldblock}
+
+			{BEGIN usu_correo_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_usu_correo}" data-fieldname="usu_correo" data-signal-error-for="usu_correo{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_usu_correo}">
+		{BEGIN usu_correo_label}{$label public_seg_usu_empresa usu_correo}{END usu_correo_label}
+	</label>
+	<div class="col-md-6" >
+		{$usu_correo_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="usu_correo">
+		<div class="text-muted" >
+		{$tooltip public_seg_usu_empresa usu_correo}
+		</div>
+	</div>
+</div>
+</div>
+{END usu_correo_fieldblock}
+
+			{BEGIN usu_estado_fieldblock}
+<div class=container>
+<div class="form-group {$fielddispclass_usu_estado}" data-fieldname="usu_estado" data-signal-error-for="usu_estado{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_usu_estado}">
+		{BEGIN usu_estado_label}{$label public_seg_usu_empresa usu_estado}{END usu_estado_label}
+	</label>
+	<div class="col-md-6" >
+		{$usu_estado_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="usu_estado">
+		<div class="text-muted" >
+		{$tooltip public_seg_usu_empresa usu_estado}
+		</div>
+	</div>
+</div>
+</div>
+{END usu_estado_fieldblock}
+
+
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}
+<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}
+<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}
+<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN editbuttons}
+	{BEGIN save_button}
+	<button class="btn btn-primary" {$savebutton_attrs}>Guardar</button>
+	{END save_button}
+	{BEGIN back_button}
+		<button class="btn btn-default" {$backbutton_attrs}>Volver a la lista</button>
+	{END back_button}
+	{BEGIN close_button}
+	<a href="#" class="btn btn-default" {$closebutton_attrs}>Cancelar</a>
+	{END close_button}
+
+{END editbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+
+
+{BEGIN container_leftbuttons_1}
+<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="  text-right col-md-3 "> 
+
+{BEGIN righteditbuttons}
+<div class="btn-group" role="group">
+	<div class="btn-group dropup" role="group">
+		<button class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<ul class="dropdown-menu dropdown-left">
+			{BEGIN reset_button}
+				<li><a href="#" {$resetbutton_attrs}>Reiniciar</a></li>
+			{END reset_button}
+			{BEGIN view_page_button}
+				<li><a href="#" {$view_page_button_attrs}>Ver</a></li>
+			{END view_page_button}
+		</ul>
+	</div>
+</div>
+{END righteditbuttons}
+
+
+
+</div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

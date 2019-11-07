@@ -1,0 +1,362 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-view" {$bodyattrs}>
+	{BEGIN body}{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_viewpage}<div {$viewpage_chiddenattr} data-pageid="{$pageid}" data-container="viewpage" class="container    "> 
+
+
+
+
+<STRONG></STRONG> 
+{BEGIN container_header}<DIV class="col-md-9 col-md-offset-3" data-container="header" data-pageid="{$pageid}" {$header_chiddenattr} {$colorEvent}><STRONG></STRONG> 
+{BEGIN viewheader}<h2 {$viewheader_hiddenattr} data-pageid="{$pageid}" data-brick="viewheader" >{$Category_value}           :
+{$Subject_value} 
+</h2>
+
+{END viewheader}
+
+
+
+<STRONG></STRONG> </div>
+{END container_header}
+
+
+
+
+
+
+<STRONG></STRONG> </div>
+{END container_viewpage}
+
+
+
+<STRONG></STRONG> 
+{BEGIN container_fields}<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class=" form-horizontal  col-md-12 "> 
+
+
+<STRONG></STRONG> 
+<div {$viewfields_hiddenattr} data-pageid="{$pageid}" data-brick="viewfields" >
+	<STRONG></STRONG><STRONG></STRONG> 
+{BEGIN AllDay_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_AllDay} bs-viewform-group" data-fieldname="AllDay">
+		<STRONG></STRONG> <label class="bs-view-label col-md-4 text-right" for="{$labelfor_AllDay}">
+			{$label fcevents AllDay}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$AllDay_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END AllDay_fieldblock}
+	{BEGIN FromDate_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_FromDate} bs-viewform-group" data-fieldname="FromDate">
+		<STRONG></STRONG> 
+<label class="bs-view-label col-md-4 text-right" for="{$labelfor_FromDate}">
+			{$label fcevents FromDate}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$FromDate_value}&nbsp;
+		<STRONG>&nbsp;</STRONG>
+{$FromTime_value} </div>
+	<STRONG></STRONG> 
+</div>
+<STRONG></STRONG> </div>
+{END FromDate_fieldblock}
+	{BEGIN ToDate_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_ToDate} bs-viewform-group" data-fieldname="ToDate">
+		<STRONG></STRONG> <label class="bs-view-label col-md-4 text-right" for="{$labelfor_ToDate}">
+			{$label fcevents ToDate}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$ToDate_value}&nbsp;
+		<STRONG>&nbsp;</STRONG>
+{$ToTime_value} 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END ToDate_fieldblock}
+	{BEGIN Description_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_Description} bs-viewform-group" data-fieldname="Description">
+		<STRONG></STRONG> 
+<label class="bs-view-label col-md-4 text-right" for="{$labelfor_Description}">
+			{$label fcevents Description}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$Description_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END Description_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN Image_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_Image} bs-viewform-group" data-fieldname="Image">
+		<STRONG></STRONG> <label class="bs-view-label col-md-4 text-right" for="{$labelfor_Image}">
+			{$label fcevents Image}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$Image_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END Image_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN Location_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_Location} bs-viewform-group" data-fieldname="Location">
+		<STRONG></STRONG> 
+<label class="bs-view-label col-md-4 text-right" for="{$labelfor_Location}">
+			{$label fcevents Location}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$Location_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END Location_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN Map_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_Map} bs-viewform-group" data-fieldname="Map">
+		<STRONG></STRONG> <STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$Map_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG><BR></STRONG> </div>
+<STRONG></STRONG> </div>
+{END Map_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN Note_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_Note} bs-viewform-group" data-fieldname="Note">
+		<STRONG></STRONG> <label class="bs-view-label col-md-4 text-right" for="{$labelfor_Note}">
+			{$label fcevents Note}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$Note_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END Note_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN Repeat_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_Repeat} bs-viewform-group" data-fieldname="Repeat">
+		<STRONG></STRONG> <label class="bs-view-label col-md-4 text-right" for="{$labelfor_Repeat}">
+			{$label fcevents Repeat}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$Repeat_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END Repeat_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN RepeatDays_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_RepeatDays} bs-viewform-group" data-fieldname="RepeatDays">
+		<STRONG></STRONG> 
+<label class="bs-view-label col-md-4 text-right" for="{$labelfor_RepeatDays}">
+			{$label fcevents RepeatDays}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$RepeatDays_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END RepeatDays_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN FinalDate_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_FinalDate} bs-viewform-group" data-fieldname="FinalDate">
+		<STRONG></STRONG> 
+<label class="bs-view-label col-md-4 text-right" for="{$labelfor_FinalDate}">
+			{$label fcevents FinalDate}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$FinalDate_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END FinalDate_fieldblock}
+	<STRONG></STRONG> 
+{BEGIN PersonId_fieldblock}<div class="container">
+	<STRONG></STRONG> 
+<div class="{$fielddispclass_PersonId} bs-viewform-group" data-fieldname="PersonId">
+		<STRONG></STRONG> 
+<label class="bs-view-label col-md-4 text-right" for="{$labelfor_PersonId}">
+			{$label fcevents PersonId}
+		</label>
+		<STRONG></STRONG> 
+<div class="col-md-6 bs-horizontal-value" >
+			<STRONG></STRONG>
+{$PersonId_value}&nbsp;
+		<STRONG>&nbsp;</STRONG> 
+</div>
+	<STRONG></STRONG> </div>
+<STRONG></STRONG> </div>
+{END PersonId_fieldblock}
+<STRONG></STRONG> 
+</div>
+
+
+
+
+<STRONG></STRONG> </div>
+{END container_fields}
+
+
+
+<STRONG></STRONG> 
+{BEGIN container_bottombuttons}<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+<STRONG></STRONG> 
+{BEGIN container_buttons}<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+<STRONG></STRONG> 
+{BEGIN container_leftbuttons}<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN viewbuttons}<STRONG></STRONG> {BEGIN back_button}<button class="btn btn-primary" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+<STRONG></STRONG> {BEGIN close_button}<button href="#" class="btn btn-primary" {$closebutton_attrs}>Close window</button>
+{END close_button}
+<STRONG></STRONG>{END viewbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+
+
+<STRONG></STRONG> 
+{BEGIN container_leftbuttons_1}<div {$leftbuttons_1_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons_1" class="  text-right col-md-3 "> 
+
+<STRONG></STRONG> 
+{BEGIN rightviewbuttons}<div class="btn-group" role="group">
+			<STRONG></STRONG> 
+{BEGIN view_menu_button}<div class="btn-group dropup" role="group">
+		<STRONG></STRONG> 
+<button class="btn btn-default dropdown-toggle {$groupbutton_class}" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ><span class="glyphicon glyphicon-menu-hamburger"></span></button>
+		<STRONG></STRONG> 
+<ul class="dropdown-menu dropdown-left">
+									<STRONG></STRONG> 
+  {BEGIN edit_page_button}<li><A href="#" {$delete_attrs}><STRONG>Delete</STRONG> </A></LI>
+  <LI><a href=# {$edit_page_button_attrs}><STRONG>Edit</STRONG> 
+  </a></li>
+			{END edit_page_button}
+		<STRONG></STRONG> </ul>
+	<STRONG></STRONG> </div>
+	{END view_menu_button}
+<STRONG></STRONG> </div>
+{END rightviewbuttons}
+
+
+
+<STRONG></STRONG> </div>
+{END container_leftbuttons_1}
+
+
+
+
+
+
+<STRONG></STRONG> </div>
+{END container_buttons}
+
+
+
+
+
+
+<STRONG></STRONG> 
+</div>
+{END container_bottombuttons}
+
+
+		<STRONG></STRONG> </div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

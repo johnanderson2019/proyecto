@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<HTML {$html_attrs}>
+  <HEAD>
+    <META http-equiv="X-UA-Compatible" content="IE=Edge">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>
+      {$pagetitle}
+    </TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <LINK href="styles/default.css" rel="stylesheet" type="text/css">
+    {BEGIN rtlCSS}
+      <LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">
+    {END rtlCSS}
+    {BEGIN styleCSSFiles}
+      <LINK href="{$stylepath}" rel="stylesheet" type="text/css">
+    {END styleCSSFiles}
+    <SCRIPT src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" defer="">
+    </SCRIPT>
+    <META name="GENERATOR" content="MSHTML 11.00.9600.16384">
+  </HEAD>
+  <BODY class="{$stylename} function-login" {$bodyattrs}>
+    {BEGIN body}
+      {$header}
+      <STYLE>
+        {$containerCss}
+      </STYLE>
+      <DIV class="bs-top">
+        {BEGIN container_page}
+          <DIV class="container" data-container="page" data-pageid="{$pageid}" {$page_chiddenattr}>
+            {BEGIN container_page_1}
+              <DIV class="bs-standalone-page col-md-6 col-md-offset-4" style="opacity: 0.9;" data-container="page_1" data-pageid="{$pageid}" {$page_1_chiddenattr}>
+                {BEGIN container_panel}
+                  <DIV class="bs-pagepanel panel panel-primary" data-container="panel" data-pageid="{$pageid}" {$panel_chiddenattr}>
+                    <!--{BEGIN container_header}
+                      <DIV class="panel-heading" data-container="header" data-pageid="{$pageid}" {$header_chiddenattr}>
+                        <LEGEND class="legend">
+                          {$pagetitlelabel login}
+                        </LEGEND>
+                        <!--<SECTION loginheader>
+                      </DIV>
+                    {END container_header}-->
+                    {BEGIN container_body}
+                      <DIV class="panel-body" data-container="body" data-pageid="{$pageid}" {$body_chiddenattr}>
+                        <DIV class="col-md-12" style="margin: 0px auto 2em; text-align: center;" data-container="fields" data-pageid="1">
+                          <IMG style="width: 80%; max-height: 80px;" src="images/logo_login.png">
+                        </DIV>
+                        {BEGIN container_header_1}
+                          <DIV class="col-md-12" data-container="header_1" data-pageid="{$pageid}" {$header_1_chiddenattr}>
+                            {BEGIN message_block}
+                              <DIV class="alert {$message_class}" role="alert" data-brick="message" data-pageid="{$pageid}" {$message_hiddenattr}>
+                                {$message}
+                              </DIV>
+                            {END message_block}
+                          </DIV>
+                        {END container_header_1}
+                        {BEGIN container_fields}
+                          <DIV class="col-md-12" data-container="fields" data-pageid="{$pageid}" {$fields_chiddenattr}>
+                            <DIV class="form-horizontal" role="form" data-brick="loginfields" data-pageid="{$pageid}" {$loginfields_hiddenattr}>
+                              {BEGIN main_loginfields}
+                                <DIV class="input">
+                                  <INPUT name="username" id="username" style="background: rgba(185, 197, 196, 0.678431); font-weight: bold;" type="text" placeholder="Usuario" value {$username_attrs}>
+                                  <SPAN>
+                                    <I class="fas fa-user">
+                                    </I>
+                                  </SPAN>
+                                </DIV>
+                                <DIV class="input">
+                                  <INPUT name="password" id="password" style="background: rgba(185, 197, 196, 0.678431); font-weight: bold;" type="password" placeholder="Contraseña" value {$password_attrs}>
+                                  <SPAN>
+                                    <I class="fas fa-lock">
+                                    </I>
+                                  </SPAN>
+                                </DIV>
+                              {END main_loginfields}
+                            </DIV>
+                          </DIV>
+                        {END container_fields}
+                        {BEGIN container_header_2}
+                          <DIV class="col-md-12" data-container="header_2" data-pageid="{$pageid}" {$header_2_chiddenattr}>
+                            <DIV class="form-horizontal">
+                              {BEGIN loginbuttons}
+                                <SPAN data-brick="loginbuttons" data-pageid="{$pageid}" {$loginbuttons_hiddenattr}>
+                                  {BEGIN signin_button}
+                                    <BUTTON class="btn btn-primary ingreso_sistema input" {$loginlink_attrs}>
+                                      Ingresar
+                                    </BUTTON>
+                                  {END signin_button}
+                                </SPAN>
+                              {END loginbuttons}
+                            </DIV>
+                          </DIV>
+                        {END container_header_2}
+                      </DIV>
+                    {END container_body}
+                  </DIV>
+                  <!-- {BEGIN container_register}
+                  <DIV class="text-center col-md-8" data-container="register" data-pageid="{$pageid}" {$register_chiddenattr}>
+                    <SPAN data-brick="bsloginregister" data-pageid="{$pageid}" {$bsloginregister_hiddenattr}>
+                      <A class="btn btn-link btn-xs" href="remind.php" {$forgotpasswordlink_attrs}>
+                        ¿Olvidó la contraseña?
+                      </A>
+                    </SPAN>
+                  </DIV>
+                {END container_register}-->
+                {END container_panel}
+              </DIV>
+            {END container_page_1}
+          </DIV>
+        {END container_page}
+      </DIV>
+      <STYLE>
+        html, body{
+        width: 100%;
+        height: 100%;
+        <!--background: url(Cute-Hipster-Background.jpg) repeat fixed;-->
+        background-size:cover;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 200;
+        }
+        .legend{
+        margin: 0px !important;
+        border:none !important;
+        position: relative;
+        width: 100%;
+        display: block;
+        padding: 15px;
+        color: #fff;
+        font-size: 20px;
+        }
+        .legend::after{
+        content: "";
+        background-image: url(images/iconoblanco.png);
+        background-size: 100px 100px;
+        background-repeat: no-repeat;
+        background-position: 235px -16px;
+        opacity: 0.6;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+        }
+        .input{
+        position: relative;
+        width: 90%;
+        margin: 15px auto;
+        }
+        input:focus, textarea:focus, select:focus {
+        outline-offset: 0px !important;
+        outline: none !important;
+        }
+        .input span{
+        position: absolute;
+        display: block;
+        color: darken(#EDEDED, 10%);
+        left: 10px;
+        top: 8px;
+        font-size: 20px;
+        }
+        input{
+        width: 100%;
+        padding: 10px 5px 10px 40px;
+        display: block;
+        border: 1px solid #EDEDED;
+        border-radius: 4px;
+        transition: 0.2s ease-out;
+        color: darken(#EDEDED, 30%);
+        }
+        input:focus{
+        padding: 10px 5px 10px 10px;
+        border: 1px solid teal !important;
+        box-shadow: 0 0 3px teal !important;
+        -moz-box-shadow: 0 0 3px teal !important;
+        -webkit-box-shadow: 0 0 3px teal !important;
+        }
+        input:not(:focus){
+        border: 1px solid #EDEDED !important;
+        box-shadow: 0 0 3px #EDEDED !important;
+        -moz-box-shadow: 0 0 3px #EDEDED !important;
+        -webkit-box-shadow: 0 0 3px #EDEDED !important;
+        }
+        .panel-heading{
+        padding:0px !important;
+        }
+        @media (min-width: 768px){
+        .bs-pagepanel {
+        margin-top: 20% !important;
+        width: 70%;
+        }
+        }
+        @media (min-width: 768px){
+        body.menuColapsed .panel-heading {
+        padding: 0px 5px !important;
+        }
+        }
+        [class*=off_ani]{
+        box-shadow:1px 0 #67caca inset;
+        }
+        [class*=on_ani]{
+        box-shadow:285px 0 #67caca inset;
+        border: 1px solid #8b0000e0;
+        }
+        .btn-primary{
+        margin: 15px !important;
+        text-transform: uppercase;
+        }
+        .panel-primary{
+        border: none !important;
+        }
+        .panel-body{
+        border-radius: 8px;
+        border: none !important;
+        box-shadow: 11px 22px 64px 0 rgba(107, 103, 146, 0.36);
+        }
+      </STYLE>
+      <SCRIPT>
+          $( ".input" ).focusin(function() {
+          $( this ).find( "span" ).animate({"opacity":"0"}, 200);
+          });
+          $( ".input" ).focusout(function() {
+          $( this ).find( "span" ).animate({"opacity":"1"}, 300);
+          });
+          $( ".submit").hover(function() {
+          $(".feedback").css({"display":"none"});
+          $(this).css({"background":"#fff","border":"1px solid #FF7052","color":"#FF7052"});
+          });
+          $(".login").submit(function(){
+          $(this).find(".submit i").removeAttr('class').addClass("fa fa-check").css({"color":"#fff"});
+          $(".submit").css({"background":"#2ecc71", "border-color":"#2ecc71"});
+          $(".feedback").show().animate({"opacity":"1", "bottom":"-80px"}, 400);
+          $("input").css({"border-color":"#2ecc71"});
+          return false;
+          });
+      </SCRIPT>
+      <STYLE>
+      </STYLE>
+      {$footer}
+    {END body}
+  </BODY>
+</HTML>

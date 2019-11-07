@@ -1,0 +1,10 @@
+Notificación de registro
+
+Te has registrado como usuario en %url%
+
+Haga click para confirmar su cuenta y finalizar el registro:
+%activateurl%
+Si no puedes hacer click en el link, copialo y pegalo en una ventana de navegador
+
+Identificación: %usu_identificacion_value%
+Correo: %usu_correo_value%

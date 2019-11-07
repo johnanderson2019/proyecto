@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+    <script type="text/javascript" src="moment.js" ></script>
+   
+    <script src="highcharts.js"></script>
+    <script src="exporting.js"></script>
+
+    
+</head>
+  <body>
+  	<div id="padre">
+		<div id="contenedor" style="display: flex;flex-direction: row;">
+			<div id="container3" style="min-width:50%;max-width:50%;height:210px;margin:1px;box-sizing: border-box;
+				background-image:url(https://www.highcharts.com/samples/graphics/sand.png);"></div>   
+			<div id="container4" style="min-width:50%;max-width:50%;height:210px;margin:1px;box-sizing: border-box;
+				background-image:url(https://www.highcharts.com/samples/graphics/sand.png);"></div>
+	    </div>  
+	    <div id="contenedor" style="display: flex;flex-direction: row;">
+			<div id="container" style="min-width:50%;max-width:50%;height:320px;margin:1px;box-sizing: border-box;
+				background-image:url(https://www.highcharts.com/samples/graphics/sand.png);"></div>   
+			<div id="container2" style="min-width:50%;max-width:50%;height:320px;margin:1px;box-sizing: border-box;
+				background-image:url(https://www.highcharts.com/samples/graphics/sand.png);"></div>
+	    </div>  
+    </div>
+
+      <script>
+    
+        var ultimox=0;
+        var ultimoy=0;
+    $(document).ready(function(){              
+      
+        $.ajax({
+                url: "datos.php?data=tem",
+                type: 'get',
+                dataType: "json",
+                success: function(DatosRecuperados){
+                $.each(DatosRecuperados, function(i,o){
+                    if(o.x){
+                        DatosRecuperados[i].x = parseInt((Date.parse(o.x)));    
+                        //console.log(Date.parse('Thu May 09 2019 23:50:23 GMT'));
+                    }
+                    if(o.y){
+                        DatosRecuperados[i].y= parseFloat(o.y);
+                    }
+                });
+                //console.log("size array: "+Object.keys(DatosRecuperados).length);
+                let tam_array=Object.keys(DatosRecuperados).length;
+
+                //console.info(DatosRecuperados);    
+                //console.info(DatosRecuperados[tam_array-1].id_dato); 
+
+                $.setx(DatosRecuperados[tam_array-1].id_dato);
+                $.sety(DatosRecuperados[tam_array-1].id_dato);
+                                
+                $('#container').highcharts({
+                    
+                    chart:{
+                            type: 'spline',
+                            animation: Highcharts.svg,
+                            marginRight: 10,
+                            events: {
+                                load:function(){
+                                    series1=this.series[0];                                                        
+                                }
+                            }
+                        },
+                    title:{
+                        text:'Grafico Temperatura'
+                    },
+                    xAxis:{
+                        type: 'datetime',
+                        //tickInterval: 5 * 60 * 1000 //cada 5 minutos
+                        tickInterval: 5 * 60 * 1000
+                        //tickPixelInterval: 150
+                    },
+                    yAxis:{
+                        title:{
+                            text: 'Temperatura'
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#000'
+                        }]
+                    },
+                    tooltip:{
+                        formatter:function(){
+                            return '<b>' + this.series.name + '</b><br/>' +
+                                Highcharts.dateFormat('%d %b %Y %H:%M:%S', this.x) + '<br/>' +
+                                Highcharts.numberFormat(this.y, 2) +' °C';
+                            }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    exporting: {
+                        enabled: true
+                    },
+                    series: [{ 
+                        name:'Temperatura',
+                        data:DatosRecuperados
+                    }]
+                });
+               
+        }});
+
+        //peticion para HUMEDAD
+        $.ajax({
+                url: "datos.php?data=hum",
+                type: 'get',
+                dataType: "json",
+                success: function(DatosRecuperados){
+                $.each(DatosRecuperados, function(i,o){
+                    if(o.x){
+                        DatosRecuperados[i].x = parseInt((Date.parse(o.x)));    
+                        //console.log(Date.parse('Thu May 09 2019 23:50:23 GMT'));
+                    }
+                    if(o.y){
+                        DatosRecuperados[i].y= parseFloat(o.y);
+                    }
+                });
+                //console.log("size array: "+Object.keys(DatosRecuperados).length);
+                let tam_array=Object.keys(DatosRecuperados).length;
+
+                //console.info(DatosRecuperados);    
+                //console.info(DatosRecuperados[tam_array-1].id_dato); 
+
+                $.setx(DatosRecuperados[tam_array-1].id_dato);
+                $.sety(DatosRecuperados[tam_array-1].id_dato);
+                                
+                $('#container2').highcharts({
+                    
+                    chart:{
+                            type: 'spline',
+                            animation: Highcharts.svg,
+                            marginRight: 10,
+                            events: {
+                                load:function(){
+                                    series2=this.series[0];                                                        
+                                }
+                            }
+                        },
+                    title:{
+                        text:'Grafico Humedad'
+                    },
+                    xAxis:{
+                        type: 'datetime',
+                        //tickInterval: 5 * 60 * 1000 //cada 5 minutos
+                        tickInterval: 5 * 60 * 1000
+                        //tickPixelInterval: 150
+                    },
+                    yAxis:{
+                        title:{
+                            text: 'Humedad'
+                        },
+                        plotLines: [{
+                            value: 0,
+                            width: 1,
+                            color: '#71e3e8'
+                        }]
+                    },
+                    tooltip:{
+                        formatter:function(){
+                            return '<b>' + this.series.name + '</b><br/>' +
+                                Highcharts.dateFormat('%d %b %Y %H:%M:%S', this.x) + '<br/>' +
+                                Highcharts.numberFormat(this.y, 2) +' %';
+                            }
+                    },
+                    legend: {
+                        enabled: false
+                    },
+                    exporting: {
+                        enabled: true
+                    },
+                    series: [{ 
+                        name:'Humedad',
+                        data:DatosRecuperados
+                    }]
+                });
+               
+        }});
+
+setInterval(function(){
+    $.ajax({
+        url: "datos.php?Consultar=1&data=tem",
+        type: 'get',
+        dataType: "json",
+        success: function(UltimosDatos){
+            var varlocalx=parseInt((Date.parse(UltimosDatos[0].x)));
+            var varlocaly=parseFloat(UltimosDatos[0].y);
+            var comparar=UltimosDatos[0].id_dato;
+            
+            if($.getx()!=comparar){
+                series1.addPoint([varlocalx, varlocaly], true, true);
+                $.setx(varlocalx);
+                $.sety(varlocaly);
+            }else{
+                //console.info("NO agrego");
+            }
+        }
+    });
+
+    $.ajax({
+        url: "datos.php?Consultar=1&data=hum",
+        type: 'get',
+        dataType: "json",
+        success: function(UltimosDatos){
+            var varlocalx=parseInt((Date.parse(UltimosDatos[0].x)));
+            var varlocaly=parseFloat(UltimosDatos[0].y);
+            var comparar=UltimosDatos[0].id_dato;
+            
+            if($.getx()!=comparar){
+                series2.addPoint([varlocalx, varlocaly], true, true);
+                $.setx(varlocalx);
+                $.sety(varlocaly);
+            }else{
+                //console.info("NO agrego");
+            }
+        }
+    });
+},15000);
+
+
+
+    
+    
+        
+});
+$.getx=function(){
+    return ultimox;           
+};
+$.gety=function(){
+    return ultimoy;           
+};       
+
+$.setx=function(x){
+    ultimox=x;
+};
+$.sety=function(y){
+    ultimox=y;
+};
+
+Highcharts.createElement('link', {
+    href: 'https://fonts.googleapis.com/css?family=Signika:400,700',
+    rel: 'stylesheet',
+    type: 'text/css'
+}, null, document.getElementsByTagName('head')[0]);
+
+// Add the background image to the container
+//Highcharts.addEvent(Highcharts.Chart, 'afterGetContainer', function () {
+	//$("[id^=container]").css("background-image","url(https://www.highcharts.com/samples/graphics/sand.png)");
+    /*this.container.style.background =
+        'url(https://www.highcharts.com/samples/graphics/sand.png)';*/
+//});
+
+Highcharts.theme = {
+    colors: ['#f45b5b', '#8085e9', '#8d4654', '#7798BF', '#aaeeee',
+        '#ff0066', '#eeaaee', '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+    chart: {
+        backgroundColor: null,
+        style: {
+            fontFamily: 'Signika, serif'
+        }
+    },
+    title: {
+        style: {
+            color: 'black',
+            fontSize: '16px',
+            fontWeight: 'bold'
+        }
+    },
+    subtitle: {
+        style: {
+            color: 'black'
+        }
+    },
+    tooltip: {
+        borderWidth: 0
+    },
+    legend: {
+        itemStyle: {
+            fontWeight: 'bold',
+            fontSize: '13px'
+        }
+    },
+    xAxis: {
+        labels: {
+            style: {
+                color: '#6e6e70'
+            }
+        }
+    },
+    yAxis: {
+        labels: {
+            style: {
+                color: '#6e6e70'
+            }
+        }
+    },
+    plotOptions: {
+        series: {
+            shadow: true
+        },
+        candlestick: {
+            lineColor: '#404048'
+        },
+        map: {
+            shadow: false
+        }
+    },
+
+    // Highstock specific
+    navigator: {
+        xAxis: {
+            gridLineColor: '#D0D0D8'
+        }
+    },
+    rangeSelector: {
+        buttonTheme: {
+            fill: 'white',
+            stroke: '#C0C0C8',
+            'stroke-width': 1,
+            states: {
+                select: {
+                    fill: '#D0D0D8'
+                }
+            }
+        }
+    },
+    scrollbar: {
+        trackBorderColor: '#C0C0C8'
+    },
+
+    // General
+    background2: '#E0E0E8'
+
+};
+
+// Apply the theme
+Highcharts.setOptions(Highcharts.theme);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!doctype html>
+<html  {$html_attrs}>
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{$pagetitle}</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<link REL="stylesheet" href="styles/default.css" type="text/css">
+		{BEGIN rtlCSS}<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
+		{END rtlCSS}
+		{BEGIN styleCSSFiles}<link REL="stylesheet" href="{$stylepath}" type="text/css">
+		{END styleCSSFiles}
+	</head>
+
+	<body class="{$stylename} function-add" {$bodyattrs}>
+	{BEGIN body}{$header}
+		<style>
+			{$containerCss}
+		</style>
+		<DIV class="bs-top">
+        
+
+{BEGIN container_editpage}<div {$editpage_chiddenattr} data-pageid="{$pageid}" data-container="editpage" class="container    "> 
+
+
+
+
+{BEGIN container_header}<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class="   col-md-9 col-md-offset-3"> 
+
+{BEGIN addheader}<h2 {$addheader_hiddenattr} data-pageid="{$pageid}" data-brick="addheader" >{$pagetitlelabel evevents add}</h2>
+
+{END addheader}
+
+
+
+</div>
+{END container_header}
+
+
+
+
+
+
+
+
+{BEGIN container_message}<div {$message_chiddenattr} data-pageid="{$pageid}" data-container="message" class="   col-md-6 col-md-offset-3"> 
+
+{BEGIN message_block}<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">
+<h5>{$message}</h5>
+<div>
+{BEGIN back_button}<button class="btn btn-sm btn-default" {$backbutton_attrs}>Back to list</button>
+{END back_button}
+{BEGIN view_page_button}<button class="btn btn-sm btn-default" {$view_page_button_attrs}>View</button>
+{END view_page_button}
+{BEGIN edit_page_button}<button class="btn btn-sm btn-default" {$edit_page_button_attrs}>Edit</button>
+{END edit_page_button}
+</div>
+</div>
+
+{END message_block}
+
+
+
+</div>
+{END container_message}
+
+
+
+
+
+
+
+</div>
+{END container_editpage}
+
+
+
+{BEGIN container_fields}<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
+
+
+<div {$addfields_hiddenattr} data-pageid="{$pageid}" data-brick="addfields" class="form-horizontal" role="form">
+			{BEGIN Subject_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Subject}" data-fieldname="Subject" data-signal-error-for="Subject{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Subject}">
+		{BEGIN Subject_label}{$label evevents Subject}{END Subject_label}
+	</label>
+	<div class="col-md-6" >
+		{$Subject_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Subject">
+		<div class="text-muted" >
+		{$tooltip evevents Subject}
+		</div>
+	</div>
+</div>
+</div>
+{END Subject_fieldblock}
+
+			{BEGIN FromDate_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_FromDate}" data-fieldname="FromDate" data-signal-error-for="FromDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_FromDate}">
+		{BEGIN FromDate_label}{$label evevents FromDate}{END FromDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$FromDate_editcontrol}
+	{$FromTime_editcontrol}</div>
+	<div class="col-md-3 help-block" data-helpfor="FromDate">
+		<div class="text-muted" >
+		{$tooltip evevents FromDate}
+		</div>
+	</div>
+</div>
+</div>
+{END FromDate_fieldblock}
+
+			{BEGIN ToDate_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_ToDate}" data-fieldname="ToDate" data-signal-error-for="ToDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_ToDate}">
+		{BEGIN ToDate_label}{$label evevents ToDate}{END ToDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$ToDate_editcontrol}
+	{$ToTime_editcontrol}</div>
+	<div class="col-md-3 help-block" data-helpfor="ToDate">
+		<div class="text-muted" >
+		{$tooltip evevents ToDate}
+		</div>
+	</div>
+</div>
+</div>
+{END ToDate_fieldblock}
+
+			{BEGIN Category_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Category}" data-fieldname="Category" data-signal-error-for="Category{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Category}">
+		{BEGIN Category_label}{$label evevents Category}{END Category_label}
+	</label>
+	<div class="col-md-6" >
+		{$Category_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Category">
+		<div class="text-muted" >
+		{$tooltip evevents Category}
+		</div>
+	</div>
+</div>
+</div>
+{END Category_fieldblock}
+
+			{BEGIN Description_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Description}" data-fieldname="Description" data-signal-error-for="Description{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Description}">
+		{BEGIN Description_label}{$label evevents Description}{END Description_label}
+	</label>
+	<div class="col-md-6" >
+		{$Description_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Description">
+		<div class="text-muted" >
+		{$tooltip evevents Description}
+		</div>
+	</div>
+</div>
+</div>
+{END Description_fieldblock}
+
+			{BEGIN Image_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Image}" data-fieldname="Image" data-signal-error-for="Image{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Image}">
+		{BEGIN Image_label}{$label evevents Image}{END Image_label}
+	</label>
+	<div class="col-md-6" >
+		{$Image_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Image">
+		<div class="text-muted" >
+		{$tooltip evevents Image}
+		</div>
+	</div>
+</div>
+</div>
+{END Image_fieldblock}
+
+			{BEGIN Location_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Location}" data-fieldname="Location" data-signal-error-for="Location{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Location}">
+		{BEGIN Location_label}{$label evevents Location}{END Location_label}
+	</label>
+	<div class="col-md-6" >
+		{$Location_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Location">
+		<div class="text-muted" >
+		{$tooltip evevents Location}
+		</div>
+	</div>
+</div>
+</div>
+{END Location_fieldblock}
+
+			{BEGIN Map_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Map}" data-fieldname="Map" data-signal-error-for="Map{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Map}">
+		{BEGIN Map_label}{$label evevents Map}{END Map_label}
+	</label>
+	<div class="col-md-6" >
+		{$Map_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Map">
+		<div class="text-muted" >
+		{$tooltip evevents Map}
+		</div>
+	</div>
+</div>
+</div>
+{END Map_fieldblock}
+
+			{BEGIN Note_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Note}" data-fieldname="Note" data-signal-error-for="Note{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Note}">
+		{BEGIN Note_label}{$label evevents Note}{END Note_label}
+	</label>
+	<div class="col-md-6" >
+		{$Note_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Note">
+		<div class="text-muted" >
+		{$tooltip evevents Note}
+		</div>
+	</div>
+</div>
+</div>
+{END Note_fieldblock}
+
+			{BEGIN Repeat_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_Repeat}" data-fieldname="Repeat" data-signal-error-for="Repeat{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_Repeat}">
+		{BEGIN Repeat_label}{$label evevents Repeat}{END Repeat_label}
+	</label>
+	<div class="col-md-6" >
+		{$Repeat_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="Repeat">
+		<div class="text-muted" >
+		{$tooltip evevents Repeat}
+		</div>
+	</div>
+</div>
+</div>
+{END Repeat_fieldblock}
+
+			{BEGIN RepeatDays_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_RepeatDays}" data-fieldname="RepeatDays" data-signal-error-for="RepeatDays{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_RepeatDays}">
+		{BEGIN RepeatDays_label}{$label evevents RepeatDays}{END RepeatDays_label}
+	</label>
+	<div class="col-md-6" >
+		{$RepeatDays_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="RepeatDays">
+		<div class="text-muted" >
+		{$tooltip evevents RepeatDays}
+		</div>
+	</div>
+</div>
+</div>
+{END RepeatDays_fieldblock}
+
+			{BEGIN FinalDate_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_FinalDate}" data-fieldname="FinalDate" data-signal-error-for="FinalDate{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_FinalDate}">
+		{BEGIN FinalDate_label}{$label evevents FinalDate}{END FinalDate_label}
+	</label>
+	<div class="col-md-6" >
+		{$FinalDate_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="FinalDate">
+		<div class="text-muted" >
+		{$tooltip evevents FinalDate}
+		</div>
+	</div>
+</div>
+</div>
+{END FinalDate_fieldblock}
+
+			{BEGIN PersonId_fieldblock}<div class=container>
+<div class="form-group {$fielddispclass_PersonId}" data-fieldname="PersonId" data-signal-error-for="PersonId{$id}" >
+	<label class="col-md-3 control-label" for="{$labelfor_PersonId}">
+		{BEGIN PersonId_label}{$label evevents PersonId}{END PersonId_label}
+	</label>
+	<div class="col-md-6" >
+		{$PersonId_editcontrol}
+	</div>
+	<div class="col-md-3 help-block" data-helpfor="PersonId">
+		<div class="text-muted" >
+		{$tooltip evevents PersonId}
+		</div>
+	</div>
+</div>
+</div>
+{END PersonId_fieldblock}
+
+
+</div>
+
+
+
+
+</div>
+{END container_fields}
+
+
+
+{BEGIN container_bottombuttons}<div {$bottombuttons_chiddenattr} data-pageid="{$pageid}" data-container="bottombuttons" class="container    "> 
+
+
+
+
+{BEGIN container_buttons}<div {$buttons_chiddenattr} data-pageid="{$pageid}" data-container="buttons" class=" form-group   "> 
+
+
+
+
+{BEGIN container_leftbuttons}<div {$leftbuttons_chiddenattr} data-pageid="{$pageid}" data-container="leftbuttons" class="   col-md-3 col-md-offset-3"> 
+
+{BEGIN addbuttons}{BEGIN save_button}<button class="btn btn-primary" {$savebutton_attrs}>Save</button>
+	{END save_button}
+	{BEGIN reset_button}<button class="btn btn-default" id="resetButton{$id}">Reset</button>
+	{END reset_button}
+	{BEGIN back_button}<button class="btn btn-default" id="backButton{$id}">Back to list</button>
+	{END back_button}
+	{BEGIN cancel_button}<a href="#" class="btn btn-default" id="cancelButton{$id}">Cancel</a>
+	{END cancel_button}
+
+{END addbuttons}
+
+
+
+</div>
+{END container_leftbuttons}
+
+
+
+
+
+
+</div>
+{END container_buttons}
+
+
+
+
+
+
+</div>
+{END container_bottombuttons}
+
+
+		</div>
+		<div class="bs-middle ">
+			<div class="bs-topmiddle">
+				
+			</div>
+			<div class="bs-left" {$blockattr_left}>
+				
+			</div>
+			<div class="bs-center">
+				
+			</div>
+			<div class="bs-right">
+				
+			</div>
+		</div>
+		<DIV class="bs-bottom">
+        
+		</div>
+		{$footer}
+	{END body}
+	</body>
+</html>

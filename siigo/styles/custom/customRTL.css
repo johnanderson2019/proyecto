@@ -1,0 +1,225 @@
+@media (min-width: 768px){
+        #openMenu{
+          	font-size: 20px;
+    		color: #fff;
+    		padding-top: 5px;
+        }		
+  
+		body.menuColapsed .sidebar.bs-fixed {
+			width: 52px;
+			overflow: hidden !important;
+			white-space: nowrap !important;
+			transition: all .28s ease-out;
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover {
+			width: 300px;
+		}
+		
+		body.menuColapsed .sidebar.bs-fixed ul[data-menulevel="2"]{
+			display:none;
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover ul.nav.collapse.in[data-menulevel="2"]{
+			display:block;
+		}
+		body.menuColapsed .sidebar.bs-fixed .bs-sidebarlogo{
+			transition: all .28s ease-out;
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover .bs-sidebarlogo{
+			position:fixed;
+			width:300px;
+			z-index:10;
+			/*background:#fff; 
+          	border-right:1px solid #ddd;
+          	*/
+		}
+		
+		body.menuColapsed .bs-sidebarlogo img{
+          margin-top: 0px;
+          margin-left: 4em;
+          height: 50px;
+          width: 70px;
+		} 
+
+  		body.menuColapsed .sidebar.bs-fixed .bs-navform.navbar-collapse.sidebar-menu.bs-hidden-xs.bs-navcontrolled{
+			margin-top:20px;
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover .bs-navform.navbar-collapse.sidebar-menu.bs-hidden-xs.bs-navcontrolled{
+			margin-top:70px !important;
+		}
+		 
+		body.menuColapsed .sidebar-contents.mCustomScrollBox.mCS-minimal-dark.mCSB_vertical.mCSB_outside{
+			min-width:300px;
+		}
+  		
+  		body.menuColapsed #ctlSearchFor1{
+  			height:38px;
+  		}
+  		body.menuColapsed .searchOptions.panel-primary.searchPanelContainer .panel-body.controlsBlock,
+  		body.menuColapsed .searchOptions.panel-primary.searchPanelContainer .panel-footer.bottomSearchButt,
+		body.menuColapsed .bs-hidden-xs.filterPanelContainer{	
+          	display: none !important;
+    	}
+  		body.menuColapsed .sidebar.bs-fixed:hover .searchOptions.panel-primary.searchPanelContainer>.panel-body.controlsBlock,
+  		body.menuColapsed .sidebar.bs-fixed:hover .searchOptions.panel-primary.searchPanelContainer .panel-footer.bottomSearchButt,
+  		body.menuColapsed .sidebar.bs-fixed:hover .bs-hidden-xs.filterPanelContainer{
+          	display:block !important;
+  		}
+  		
+  		/***********boton de busqueda*************/
+  		body.menuColapsed button#showHideControlChooseMenu1:before {
+          content: "\e003";
+    	  font-size: 12px !important;          
+          position:relative;
+          left:-5px;
+          font-family: 'Glyphicons Halflings';
+        }
+        body.menuColapsed button#showHideControlChooseMenu1 {
+          font-size: 0px;
+          width:43px                             
+        }
+        body.menuColapsed button#showHideControlChooseMenu1 .caret{
+        	margin-top:-15px
+        }
+        body.menuColapsed .sidebar.bs-fixed:hover button#showHideControlChooseMenu1{
+        	font-size:inherit;
+        	width:auto;
+        }
+        body.menuColapsed .sidebar.bs-fixed:hover button#showHideControlChooseMenu1 .caret{
+        	margin-top:0px;
+        }	
+  		body.menuColapsed .sidebar.bs-fixed:hover button#showHideControlChooseMenu1:before{
+          	content:"";
+  		}
+  		/********************************/
+  		/**********menu seleccionado*********************/
+		
+		body.menuColapsed .sidebar {
+			/*border-right:1px solid #ddd;*/
+			transition: all .28s ease-out;
+		}
+		
+
+		body.menuColapsed a.navbar-brand:before {
+			content: " . . . . . ";
+			background: url(../../images/iconoblanco.png) no-repeat;
+			width: 20px; 
+			background-size: 51px 44px;
+			color: transparent;
+			top: -13px;
+			left: -13px;
+			position: relative;
+			height: 100px;
+			padding: 21px 31px;
+			background-position: 0px 23px;
+			transition: all .28s ease-out;
+
+		}
+		body.menuColapsed a.navbar-brand>img {
+			display:none;
+			transition: all .28s ease-out;
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover a.navbar-brand:before {
+			content:"";
+			display:none;
+		}	
+		body.menuColapsed .sidebar.bs-fixed:hover a.navbar-brand>img {
+			display:block;
+
+		}
+  		body.menuColapsed .hr-sidemenu{
+			width: 15%;
+    		margin-left: 4px;
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover .hr-sidemenu{
+			width: 97% !important;
+		}
+		body.menuColapsed .sidebar-container{
+			width:51px;			
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover .sidebar-container{
+			width:98%;
+			margin-left:3px;
+		}
+		body.menuColapsed #searchPanelOptions1{
+			display:none;	
+		}
+		body.menuColapsed .sidebar.bs-fixed:hover #searchPanelOptions1{
+			display:block;	
+		}
+		body.menuColapsed .panel-heading{
+			padding:10px 5px !important;
+		}
+		
+  		/******************************************/
+  
+  		body.menuColapsed .menu-icon.glyphicon{
+  			margin-right:15px;
+  			font-size: 18px;
+  		}
+		body.menuColapsed ul.nav.menu-treelike>li>a>i{
+			margin-right:15px;
+		}
+		body.menuColapsed :not([data-hidden]) + .bs-wrapper {
+			margin-left: 53px;
+		}
+		body.menuColapsed :not([data-hidden]) + .bs-wrapper > .bs-fixedheader {
+			width: calc(100% - 53px);
+		}
+		/*********ancho de tabla****************/
+		body.menuColapsed .bs-sidebar-main, .bs-fixedsidebarmain {
+			display: table;
+			width: 100% !important;
+			padding-left: 50px !important;
+		}
+		body.menuColapsed .bs-left + .bs-screenwidth, .bs-sidebar-screenbound {
+			width: 99%;
+			max-width: 100%;
+		}
+		body.menuColapsed .bs-left:not([data-hidden]) + .bs-screenwidth > * > .bs-grid, .sidebar:not([data-hidden]) + * .bs-sidebar-screenbound > * > .bs-grid {
+			width: 99%;
+		}
+  		body.menuColapsed .navbar.navbar-default .btn-primary {
+ 		   border-color: #4CAE4C;
+		}
+  
+  		.modal-dialog .modal-content.ui-resizable{
+      	  min-width:800px;
+      	}
+  		.modal-body {
+          width: 100% !important;
+      	}
+  		.modal-header,.modal-footer {
+            width: 100% !important;
+        }
+  
+}
+@media (max-width: 767px){
+  #openMenu{
+    display:none;
+  }
+}  
+
+.mCS_no_scrollbar .mCS_img_loaded{
+	display:none !important;
+}
+
+body.function-login,body.function-menu{
+//background-image: url(../../images/fondo.jpg);
+background-size: cover;
+}
+
+body.function-list,body.function-add,body.function-add,body.function-view,body.function-login,body.function-menu,#mCSB_1{
+	background-image: url(../../images/fondo_list2.png);
+	background-size: 100% 100%;
+  background-repeat: no-repeat;    
+}
+#mCSB_1{
+	background-image: url(../../images/fondo_list2.png);
+	background-size: 100% 100%;
+  background-repeat: no-repeat;    
+  	
+}
+
+html{
+	min-height: 100%;
+}

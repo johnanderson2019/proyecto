@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Prueba de notificaciones</title>
+	<link rel="stylesheet" type="text/css" href="animate.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" href="awesome/css/font-awesome.min.css">
+	<script type="text/javascript" src="jquery3.1.js"></script>
+	<script type="text/javascript" src="bootstrap-notify.js"></script>
+	<script type="text/javascript" src="bootstrap-notify.min.js"></script>
+
+	<style type="text/css">
+		*{
+			font-family: Arial;
+		}
+	</style>
+
+</head>
+<body>
+
+<script type="text/javascript">
+	function mostrarMensaje2(txt_mensaje, tipo, contenedor, tiempo){
+	if(tiempo==""){
+		tiempo=4000;
+	}
+//	 contenedor = "#"+contenedor;		 
+	if(tipo=="ok"){	 
+		$.notify({
+			icon: 'fa fa-check',
+			message: txt_mensaje
+		},{
+			type: 'success',
+			delay: tiempo,
+			placement: {
+				from: "bottom",
+				align: "right"
+			},
+			animate: {
+				enter: 'animated fadeInRight',
+				exit: 'animated fadeOutRight'
+			},
+			
+			//element: contenedor
+			
+		});
+	}else if(tipo=="warn"){	 
+		$.notify({
+			icon: 'fa fa-warning',
+			message: txt_mensaje
+			
+		},{
+			type: 'warning',
+			delay: tiempo,
+			placement: {
+				from: "bottom",
+				align: "right"
+			},
+			animate: {
+				enter: 'animated fadeInRight',
+				exit: 'animated fadeOutRight'
+			},
+
+			//element: contenedor
+			
+		});
+	}else if(tipo=="error"){	 
+		$.notify({
+			icon: 'fa fa-window-close',
+			message: txt_mensaje
+			
+		},{
+			type: 'danger',
+			delay: tiempo,
+			placement: {
+				from: "bottom",
+				align: "right"
+			},
+			animate: {
+				enter: 'animated fadeInRight',
+				exit: 'animated fadeOutRight'
+			}
+			
+		});
+	}else{
+		$.notify({
+			icon: 'fa fa-info',
+			message: txt_mensaje
+			
+		},{
+			type: 'info',
+			delay: tiempo,
+			placement: {
+				from: "bottom",
+				align: "right"
+			},
+			animate: {
+				enter: 'animated fadeInRight',
+				exit: 'animated fadeOutRight'
+			}
+			
+		});
+	}
+}
+
+$( document ).ready(function() {
+    mostrarMensaje2("probando", "ok", "div", 2000);
+    mostrarMensaje2("probando", "warn", "div", 2000);
+    mostrarMensaje2("probando", "error", "div", 2000);
+    mostrarMensaje2("probando", "info", "div", 2000);
+});
+
+
+</script>
+<div id="div" style="width:10%;height:10%;"></div>
+
+</body>
+</html>
